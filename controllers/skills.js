@@ -2,7 +2,7 @@ module.exports = {
     index,
     show,
     addForm,
-    addSkill,
+    createSkill,
     editForm,
     delete: deleteSkill,
     update: updateSkill,
@@ -24,9 +24,9 @@ function addForm(req, res, next) {
     res.render('addForm');
 }
 
-function addSkill(req, res, next) {
+function createSkill(req, res, next) {
     let addedSkill = req.body;
-    addedSkill.id =  Math.floor(Math.random()*10000000).toString();
+    addedSkill.id =  Math.floor(Math.random()*10000000);
     Skill.getAll().push(addedSkill);
     res.redirect('/skills');
 }
@@ -37,7 +37,7 @@ function editForm(req, res, next) {
 }
 
 function deleteSkill(req, res, next) {
-    let Skill = Skill.deleteSkill(req.params.id);
+    Skill.deleteSkill(req.params.id);
     res.redirect('/skills');
 }
 

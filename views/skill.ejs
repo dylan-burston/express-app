@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Skill</title>
 </head>
 <body>
     <h2>Skill name: <%=skill.name%></h2>
     <h2>Years Experience: <%=skill.experience%></h2>
-    <form action="/skills/<%=skill.id%>?_method=DELETE" method="POST">
-        <button type="submit">DELETE</button>
+    <form class="delete-form" action="/skills/<%=skill.id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
     </form>
-    <a href="/skills/<%=skill.id%>/edit"><button>EDIT</button></a>
+    <a href="/skills/<%=skill.id%>/edit"><button>Edit Skill</button></a>
+    <a href="/skills"><button>Home</button></a>
 </body>
 </html>
 
